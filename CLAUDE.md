@@ -57,6 +57,10 @@ last_updated: YYYY-MM-DD
 - `/query <问题>` — 在 wiki 中检索并回答，必须用相对链接引用
 - `/lint` — 全局扫死链 / 游离页 / 索引未同步 / 知识冲突
 
+## 一键启动
+
+- `/bootstrap <云文档父链接>` — 把现有云端知识库（kBase / Notion / Lark 等）一键迁移到本地，省掉冷启动成本。详见 `.claude/skills/bootstrap/SKILL.md`。
+
 ## 命名规范
 
 - Entities / Concepts：TitleCase（如 `ClaudeCode.md`）

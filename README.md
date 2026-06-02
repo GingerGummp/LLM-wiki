@@ -18,12 +18,15 @@ git clone https://github.com/GingerGummp/LLM-wiki && cd LLM-wiki
 # 2. 用 Claude Code 打开（它会自动加载 CLAUDE.md 契约）
 claude
 
-# 3. 体验三件套
+# 3. 一键迁移现有云文档知识库（最快路径，5 分钟拥有自己的 wiki）
+/bootstrap https://docs.example.com/k/home/<你的-kBase-id>
+
+# 4. 日常体验三件套
 /ingest raw/01-articles/karpathy-llm-wiki.md   # 摄入一份资料
 /query LLM-Wiki 的核心不变量是什么              # AI 在 wiki 里查询并引用回答
 /lint                                          # 健康度检查
 
-# 4. 直接跑脚本（不需要 AI 也能用）
+# 5. 直接跑脚本（不需要 AI 也能用）
 python3 scripts/lint.py
 python3 scripts/stats.py
 ```
@@ -63,15 +66,23 @@ wiki/       编译输出层（你的第二大脑）
 
 ---
 
-## 三大 Skill
+## 三大 Skill + 一键启动
 
 | Skill | 角色 | 触发 | 代码 |
 |---|---|---|---|
+| `/bootstrap` | **一键迁移**：把云端知识库（kBase / Notion / Lark）批量导入并编译 | 首次启动 / 增量同步 | [SKILL.md](.claude/skills/bootstrap/SKILL.md) |
 | `/ingest` | 编译器：摄入 raw/inbox 到 wiki | 摄入资料时 | [SKILL.md](.claude/skills/ingest/SKILL.md) |
 | `/query` | 检索器：在 wiki 中查询并引用 | 问业务问题时 | [SKILL.md](.claude/skills/query/SKILL.md) |
 | `/lint` | 健康度扫描：死链 / 游离 / 索引 / 冲突 | 周度维护 | [SKILL.md](.claude/skills/lint/SKILL.md) |
 
+**典型使用节奏**：
+- **首次启动**：跑一次 `/bootstrap <你的云文档父链接>`，5 分钟把现有知识库整体迁过来
+- **日常**：`/ingest` 增量摄入新资料
+- **每周**：`/lint` 维护健康度，知识库不熵增
+- **每月**：再跑一次 `/bootstrap` 同步云端新增内容
+
 少一个都不行：
+- 没有 `/bootstrap` → 冷启动太痛，从零喂资料劝退
 - 只摄入不查询 → 知识库变冷启动垃圾桶
 - 只查询不维护 → 半年后死链一片
 
@@ -111,14 +122,19 @@ rm -rf .git && git init
 
 把里面提到的领域 / 业务背景替换成你自己的（例：从「激励广告 owner」换成「前端工程师」）。
 
-### 4. 摄入第一份资料
+### 4. 二选一：冷启动 or 一键迁移
 
-随便挑一篇你常翻的文章扔进 `raw/01-articles/`，然后：
+**方式 A — 一键迁移（推荐，5 分钟有完整知识库）**：
+```
+/bootstrap https://docs.example.com/k/home/<你的-kBase-id>
+```
+skill 自动遍历整棵文档树、抓取所有页面到 `raw/`、按 schema 编译进 `wiki/`，结束给你一份导入报告。
 
+**方式 B — 从单篇资料起步**：
+随便挑一篇文章扔进 `raw/01-articles/`，然后：
 ```
 /ingest raw/01-articles/your-article.md
 ```
-
 体验完整闭环：source 摘要 → 实体 / 概念页 → 双链 → index / log 全部自动更新。
 
 ### 5. 一周后问第一个问题
@@ -164,10 +180,11 @@ rm -rf .git && git init
 demo/
 ├── CLAUDE.md                 # 全局契约（Claude Code 启动自动加载）
 ├── README.md                 # 本文件
-├── .claude/skills/           # 三大 Skill
-│   ├── ingest/SKILL.md
-│   ├── query/SKILL.md
-│   └── lint/SKILL.md
+├── .claude/skills/           # Skill 集合
+│   ├── bootstrap/SKILL.md    #   一键迁移云文档知识库
+│   ├── ingest/SKILL.md       #   增量摄入单篇资料
+│   ├── query/SKILL.md        #   wiki 检索 + 引用回答
+│   └── lint/SKILL.md         #   健康度扫描
 ├── wiki/                     # 编译输出层（你的第二大脑）
 │   ├── index.md              # 总目录
 │   ├── log.md                # Append-only 操作日志

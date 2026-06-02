@@ -287,9 +287,10 @@
 
       <div class="card">
         <div class="num">COMPONENT 02</div>
-        <h3>Skill 三件套</h3>
-        <div class="desc">把 Claude Code 变成知识库专属编辑器。<span class="kbd">/ingest</span> <span class="kbd">/query</span> <span class="kbd">/lint</span> 构成最小闭环。</div>
+        <h3>Skill 四件套</h3>
+        <div class="desc">把 Claude Code 变成知识库专属编辑器。<span class="kbd">/bootstrap</span> <span class="kbd">/ingest</span> <span class="kbd">/query</span> <span class="kbd">/lint</span> 覆盖「迁移→摄入→检索→维护」全链路。</div>
         <ul>
+          <li>/bootstrap — 一键从云文档父链接批量初始化</li>
           <li>/ingest — 把碎片摄入并自动建双链</li>
           <li>/query — 在 wiki 中检索并强制引用</li>
           <li>/lint — 死链 / 游离 / 索引 / 冲突</li>
@@ -325,7 +326,7 @@
 <!-- SKILL TABLE -->
 <section>
   <div class="container">
-    <h2><span class="num">04</span> 三大 Skill 详解</h2>
+    <h2><span class="num">04</span> 四大 Skill 详解</h2>
     <table>
       <thead>
         <tr>
@@ -336,6 +337,12 @@
         </tr>
       </thead>
       <tbody>
+        <tr>
+          <td><code>/bootstrap</code></td>
+          <td>一键迁移</td>
+          <td>从云文档父链接批量初始化 wiki</td>
+          <td>仅写 raw/ + wiki/</td>
+        </tr>
         <tr>
           <td><code>/ingest</code></td>
           <td>编译器</td>
@@ -357,7 +364,7 @@
       </tbody>
     </table>
     <p style="margin-top: 18px; color: var(--fg-mute); font-size: 14px;">
-      <strong>为什么必须三个都有：</strong>只摄入不查询 → 冷启动垃圾桶；只查询不维护 → 半年后死链一片。
+      <strong>四个 Skill 各司其职：</strong>bootstrap 解决冷启动；ingest 日常增量；query 让 AI 真正用上知识库；lint 防熵增。
     </p>
   </div>
 </section>
