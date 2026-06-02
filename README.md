@@ -1,4 +1,4 @@
-# LLM-Wiki Demo — 把碎片变成可对话的第二大脑
+# LLM-Wiki — 把碎片变成可对话的第二大脑
 
 > Anthropic Claude Code + Karpathy LLM-Wiki schema 的最小可运行样例。
 > Clone 下来 5 分钟，让 AI 在你的私有知识库里替你做业务判断。
@@ -9,11 +9,11 @@
 
 ---
 
-## TL;DR
+## 如何使用
 
 ```bash
 # 1. clone
-git clone <repo-url> my-wiki && cd my-wiki
+git clone https://github.com/GingerGummp/LLM-wiki my-wiki && cd my-wiki
 
 # 2. 用 Claude Code 打开（它会自动加载 CLAUDE.md 契约）
 claude
@@ -102,7 +102,7 @@ wiki/       编译输出层（你的第二大脑）
 ### 2. clone 本仓库并改名
 
 ```bash
-git clone <repo-url> my-wiki
+git clone https://github.com/GingerGummp/LLM-wiki my-wiki
 cd my-wiki
 rm -rf .git && git init
 ```
@@ -149,7 +149,7 @@ rm -rf .git && git init
 **适合**：
 - 长期 owner 一块业务、需要积累的人
 - 写代码 / 做研究 / 做策略、希望 AI 真正帮你做判断的人
-- 愿意每周维护 20 分钟的人
+- 希望借助大模型能力对知识做记忆和整理的人
 
 **不适合**：
 - 一次性小项目、一周后不再回头的工作
