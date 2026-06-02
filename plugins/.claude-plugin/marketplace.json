@@ -1,0 +1,17 @@
+{
+  "name": "llm-wiki",
+  "owner": {
+    "name": "GingerGummp"
+  },
+  "metadata": {
+    "description": "LLM-Wiki 项目捆绑的 MCP 插件 marketplace —— 让 /bootstrap 等需要外部数据源的 skill 开箱即用。",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "docs-mcp",
+      "source": "./docs-mcp",
+      "description": "读写公司内部 Docs 页面（docs.corp.kuaishou.com）。为 /bootstrap 提供 docs_list_tree / docs_read 支持。"
+    }
+  ]
+}
