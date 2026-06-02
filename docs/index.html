@@ -163,7 +163,7 @@
     <div class="badge">AI 样板间 · 个人知识库构建与应用</div>
     <h1>把碎片变成<br/><span class="hl">可对话的第二大脑</span></h1>
     <p class="sub">
-      我用 12 周搭了一套基于 Claude Code + LLM-Wiki schema 的私有知识库，
+      我搭了一套基于 Claude Code + LLM-Wiki schema 的私有知识库，
       让 AI 在我的 60 页业务 wiki 上直接做我的业务判断陪练。
       这套方法、目录契约、Skill、MCP 配置全部脱敏开源，clone 5 分钟即可上手。
     </p>
@@ -177,7 +177,7 @@
       <div class="stat"><div class="v">60+</div><div class="l">Wiki 页面</div></div>
       <div class="stat"><div class="v">3.5+</div><div class="l">平均双链密度</div></div>
       <div class="stat"><div class="v">6×</div><div class="l">周报效率提升</div></div>
-      <div class="stat"><div class="v">12w</div><div class="l">真实业务验证</div></div>
+      <div class="stat"><div class="v">0</div><div class="l">死链 / 游离 / 冲突</div></div>
     </div>
   </div>
 </section>
@@ -189,14 +189,14 @@
     <div class="pain-list">
       <div class="pain-item">
         <div class="q">Doc 收藏夹 200+，写周报还是从零搜起</div>
-        <div class="a">飞书搜「印尼 金币 上限」，30 条结果翻不到那次实验结论</div>
+        <div class="a">在 Doc 系统里搜「印尼 金币 上限」，30 条结果翻不到那次实验结论</div>
       </div>
       <div class="pain-item">
         <div class="q">AI 答案都很通用，因为它根本不懂你的业务</div>
         <div class="a">ChatGPT 不知道你公司的指标口径、历史决定、内部黑话</div>
       </div>
       <div class="pain-item">
-        <div class="q">试过 Notion AI / 飞书智能伙伴，没真正解决</div>
+        <div class="q">试过 Notion AI / 通用 Doc 智能助手，没真正解决</div>
         <div class="a">检索范围太杂、命中率低、无法 fork / 定制</div>
       </div>
     </div>
@@ -292,7 +292,7 @@
         <ul>
           <li>/ingest — 把碎片摄入并自动建双链</li>
           <li>/query — 在 wiki 中检索并强制引用</li>
-          <li>/lint — 死链 / 孤儿 / 索引 / 冲突</li>
+          <li>/lint — 死链 / 游离 / 索引 / 冲突</li>
         </ul>
       </div>
 
@@ -351,7 +351,7 @@
         <tr>
           <td><code>/lint</code></td>
           <td>健康度扫描</td>
-          <td>死链 / 孤儿 / 索引 / 冲突</td>
+          <td>死链 / 游离 / 索引 / 冲突</td>
           <td>报告，需用户确认才修复</td>
         </tr>
       </tbody>
@@ -437,7 +437,7 @@
         <ul>
           <li>一次性小项目、一周后不再回头</li>
           <li>不愿意维护目录、不写双链的人</li>
-          <li>强依赖跨部门协作、内容必须留在飞书 / 内部 doc</li>
+          <li>强依赖跨部门协作、内容必须留在公司内部 Doc 系统</li>
         </ul>
       </div>
     </div>
@@ -459,9 +459,9 @@
 - 平均双链密度: <span class="k">3.57</span> 链/页
 
 <span class="c"># 跑 /lint：</span>
-死链 0  · 孤儿 0  · 索引未同步 0  · 知识冲突 0   <span class="s">✓ 全部健康</span></pre>
+死链 0  · 游离 0  · 索引未同步 0  · 知识冲突 0   <span class="s">✓ 全部健康</span></pre>
     <p style="margin-top: 16px;">
-      生产仓库当前规模：<strong>60+ 页面，双链密度 3.5+ 链/页</strong>。这套方案在真实业务中验证 12 周。
+      生产仓库当前规模：<strong>60+ 页面，双链密度 3.5+ 链/页</strong>。这套方案在真实业务中已持续运转。
     </p>
   </div>
 </section>
